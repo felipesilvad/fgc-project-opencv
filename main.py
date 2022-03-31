@@ -1,37 +1,76 @@
 import os
 import cv2 as cv
+import trackchar
+import tracklife
+import trackchartxt
+from config import round_img, chars
 
 if __name__ == "__main__":
-  img = cv.imread('img/test.jpg')
-  video = cv.VideoCapture('video/video.mp4')
-  round1Image = cv.imread('img/round1.png')
 
-  round1Tracker = cv.TrackerCSRT_create()
-  round1Box = (1, 1, 460, 120)
+  for char in chars:
+    trackchar.MatchP1(char[1], round_img)
+    trackchar.MatchP2(char[1], round_img)
+  P1_char1 = list(dict.fromkeys(trackchar.P1_current_char))
+  P2_char1 = list(dict.fromkeys(trackchar.P2_current_char))
 
-  round1Tracker.init(round1Image, round1Box)
+  if len(P1_char1) == 1:
+    cv.rectangle(round_img, (0, 0), (0 + trackchar.w, 0 + trackchar.h), (194, 221, 25), 2)
+    cv.putText(round_img, P1_char1[0].upper(), org=(0 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
+    cv.putText(round_img, P1_char1[0].upper(), org=(0 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
+  else:
+    cv.rectangle(round_img, (0, 0), (0 + trackchar.w, 0 + trackchar.h), (0, 0, 225), 2)
+    for char in P1_char1:
+      cv.putText(round_img, char.upper(), org=(0 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
+      cv.putText(round_img, char.upper(), org=(0 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-  count = 0
+  if len(P2_char1) == 1:
+    cv.rectangle(round_img, (1171, 0), (1171 + trackchar.w, 0 + trackchar.h), (194, 221, 25), 2)
+    cv.putText(round_img, P2_char1[0].upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
+    cv.putText(round_img, P2_char1[0].upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
+  else:
+    cv.rectangle(round_img, (1171, 0), (1171 + trackchar.w, 0 + trackchar.h), (0, 0, 225), 2)
+    for char in P2_char1:
+      cv.putText(round_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
+      cv.putText(round_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-  while True:
-    isTrue, frame = video.read()
-    count += 1
-    ok, round1Box = round1Tracker.update(frame)
 
-    if ok:
-      pt1 = (round1Box[0], round1Box[1])
-      pt2 = ((round1Box[0] + round1Box[2]), (round1Box[1] + round1Box[3]))
-      cv.rectangle(frame, pt1, pt2, (255, 0, 0), 2, 1)
-      # cv.imwrite("round1.jpg",frame)
-      print('round1', count)
-      
-    else:
-      print('notFound', count)
+  trackchartxt.track_txt_P1char1()
+  for char in chars:
+    trackchartxt.match_txt_P1char1(char[1], round_img)
+  P1_char1_txt = list(dict.fromkeys(trackchartxt.P1_char1))
 
-    cv.imshow('Video', frame)
+  trackchartxt.track_txt_P1char2()
+  for char in chars:
+    trackchartxt.match_txt_P1char2(char[1], round_img)
+  P1_char2 = list(dict.fromkeys(trackchartxt.P1_char2))
 
-    if cv.waitKey(10) == 27:
-      break
+  trackchartxt.track_txt_P1char3()
+  for char in chars:
+    trackchartxt.match_txt_P1char3(char[1], round_img)
+  P1_char3 = list(dict.fromkeys(trackchartxt.P1_char3))
 
-  video.release()
+  trackchartxt.track_txt_P2char1()
+  for char in chars:
+    trackchartxt.match_txt_P2char1(char[1], round_img)
+  P2_char1_txt = list(dict.fromkeys(trackchartxt.P2_char1))
+
+  trackchartxt.track_txt_P2char2()
+  for char in chars:
+    trackchartxt.match_txt_P2char2(char[1], round_img)
+  P2_char2 = list(dict.fromkeys(trackchartxt.P2_char2))
+
+  trackchartxt.track_txt_P2char3()
+  for char in chars:
+    trackchartxt.match_txt_P2char3(char[1], round_img)
+  P2_char3 = list(dict.fromkeys(trackchartxt.P2_char3))
+
+  tracklife.MatchLifeP1(round_img)
+  tracklife.MatchLifeP2(round_img)
+
+  print(round(tracklife.lifeP1_percent), P1_char1, 'VS', P2_char1, round(tracklife.lifeP2_percent))
+  print(P1_char1_txt, P2_char1_txt)
+  print(P1_char2, P2_char2)
+  print(P1_char3, P2_char3)
+  cv.imshow('img', round_img)
+  cv.waitKey(0)
   cv.destroyAllWindows()
