@@ -8,8 +8,8 @@ from config import round_img, chars
 if __name__ == "__main__":
 
   for char in chars:
-    trackchar.MatchP1(char[1])
-    trackchar.MatchP2(char[1])
+    trackchar.MatchP1(char[1], round_img)
+    trackchar.MatchP2(char[1], round_img)
   P1_char1 = list(dict.fromkeys(trackchar.P1_current_char))
   P2_char1 = list(dict.fromkeys(trackchar.P2_current_char))
 

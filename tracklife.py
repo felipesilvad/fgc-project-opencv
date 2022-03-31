@@ -1,32 +1,24 @@
 import cv2 as cv
 from cv2 import imshow
 import numpy as np
-from config import round_img
 
 lifebar_w = 480
 lifebar_h = 26
-
-lifebarP1 = round_img[36 : 36 + lifebar_h, 110 : 110 + lifebar_w]
-lifebarP1_hsv = cv.cvtColor(lifebarP1, cv.COLOR_BGR2HSV)
-
-lifebarP2 = round_img[36 : 36 + lifebar_h, 690 : 690 + lifebar_w]
-lifebarP2_hsv = cv.cvtColor(lifebarP2, cv.COLOR_BGR2HSV)
 
 high_life_color_hsv = [77, 183, 224]
 lower_bound_high_life = np.array([high_life_color_hsv[0] - 40, high_life_color_hsv [1] - 40, high_life_color_hsv[2] - 40])   
 upper_bound_high_life = np.array([high_life_color_hsv[0] + 40, high_life_color_hsv [1] + 40, high_life_color_hsv[2] + 40])  
 
-maskP1_high_life = cv.inRange(lifebarP1_hsv, lower_bound_high_life, upper_bound_high_life)
-maskP2_high_life = cv.inRange(lifebarP2_hsv, lower_bound_high_life, upper_bound_high_life)
-
 low_life_color_hsv = [17, 244, 232]
 lower_bound_low_life = np.array([low_life_color_hsv[0] - 15, low_life_color_hsv [1] - 15, low_life_color_hsv[2] - 18])   
 upper_bound_low_life = np.array([low_life_color_hsv[0] + 15, low_life_color_hsv [1] + 15, low_life_color_hsv[2] + 18])  
 
-maskP1_low_life = cv.inRange(lifebarP1_hsv, lower_bound_low_life, upper_bound_low_life)
-maskP2_low_life = cv.inRange(lifebarP2_hsv, lower_bound_low_life, upper_bound_low_life)
+def MatchLifeP1(round_img):
+  lifebarP1 = round_img[36 : 36 + lifebar_h, 110 : 110 + lifebar_w]
+  lifebarP1_hsv = cv.cvtColor(lifebarP1, cv.COLOR_BGR2HSV)
+  maskP1_high_life = cv.inRange(lifebarP1_hsv, lower_bound_high_life, upper_bound_high_life)
+  maskP1_low_life = cv.inRange(lifebarP1_hsv, lower_bound_low_life, upper_bound_low_life)
 
-def MatchLifeP1(img):
   global lifeP1_percent
   if np.sum(maskP1_high_life) > 0:
     threshP1 = cv.threshold(maskP1_high_life, 0, 255, cv.THRESH_BINARY+cv.THRESH_OTSU)[1]
@@ -64,7 +56,13 @@ def MatchLifeP1(img):
     cv.putText(lifebarP1, (str(round(lifeP1_percent,2)) + "%"), org=((min(w_valuesP1) + int(lifeP1_wP1/2) - 10), 18), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 0),thickness=2)
   if np.sum(maskP1_high_life) == 0 and np.sum(maskP1_low_life) == 0:
     lifeP1_percent = 0
-def MatchLifeP2(img):
+    
+def MatchLifeP2(round_img):
+  lifebarP2 = round_img[36 : 36 + lifebar_h, 690 : 690 + lifebar_w]
+  lifebarP2_hsv = cv.cvtColor(lifebarP2, cv.COLOR_BGR2HSV)
+  maskP2_high_life = cv.inRange(lifebarP2_hsv, lower_bound_high_life, upper_bound_high_life)
+  maskP2_low_life = cv.inRange(lifebarP2_hsv, lower_bound_low_life, upper_bound_low_life)
+
   global lifeP2_percent
   if np.sum(maskP2_high_life) > 0:
     threshP2 = cv.threshold(maskP2_high_life, 0, 255, cv.THRESH_BINARY+cv.THRESH_OTSU)[1]
