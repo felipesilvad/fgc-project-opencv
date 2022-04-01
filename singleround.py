@@ -41,14 +41,12 @@ if __name__ == "__main__":
   P1_char3_txt = list(dict.fromkeys(trackchartxt.track_char_txt(config.round_img, 112, 21)))
   P2_char3_txt = list(dict.fromkeys(trackchartxt.track_char_txt(config.round_img, 112, 1173)))
 
-  
-  print('ROUND 1')
   print(P1_round1_current_char, 'VS', P2_round1_current_char)
   print(round1_P1_start_life, '|', round1_P2_start_life)
   print(P1_char1_txt, P2_char1_txt)
   print(P1_char2_txt, P2_char2_txt)
   print(P1_char3_txt, P2_char3_txt)
 
-  cv.imshow('round', config.round_img)
+  cv.imshow('round', config.round_img[0 : 67 + 67, 0 : 1280])
   cv.waitKey(0)
   cv.destroyAllWindows()

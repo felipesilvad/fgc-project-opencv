@@ -10,11 +10,11 @@ lower_bound_high_life = np.array([high_life_color_hsv[0] - 40, high_life_color_h
 upper_bound_high_life = np.array([high_life_color_hsv[0] + 40, high_life_color_hsv [1] + 40, high_life_color_hsv[2] + 40])  
 
 low_life_color_hsv = [17, 244, 232]
-lower_bound_low_life = np.array([low_life_color_hsv[0] - 15, low_life_color_hsv [1] - 15, low_life_color_hsv[2] - 18])   
-upper_bound_low_life = np.array([low_life_color_hsv[0] + 15, low_life_color_hsv [1] + 15, low_life_color_hsv[2] + 18])  
+lower_bound_low_life = np.array([low_life_color_hsv[0] - 20, low_life_color_hsv [1] - 20, low_life_color_hsv[2] - 18])   
+upper_bound_low_life = np.array([low_life_color_hsv[0] + 20, low_life_color_hsv [1] + 20, low_life_color_hsv[2] + 18])  
 
 def MatchLifeP1(round_img):
-  lifebarP1 = round_img[36 + 3 : 36 + lifebar_h - 3, 110 : 110 + lifebar_w]
+  lifebarP1 = round_img[36 : 36 + lifebar_h, 110 : 110 + lifebar_w]
   lifebarP1_hsv = cv.cvtColor(lifebarP1, cv.COLOR_BGR2HSV)
   maskP1_high_life = cv.inRange(lifebarP1_hsv, lower_bound_high_life, upper_bound_high_life)
   maskP1_low_life = cv.inRange(lifebarP1_hsv, lower_bound_low_life, upper_bound_low_life)
@@ -25,11 +25,7 @@ def MatchLifeP1(round_img):
     contoursP1 = cv.findContours(threshP1, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     contoursP1 = contoursP1[0] if len(contoursP1) == 2 else contoursP1[1]
     # cv.drawContours(lifebarP1, contoursP1, -1, (50, 0, 250),2)
-
-    w_valuesP1 = []
-    np_contoursP1 = np.array(contoursP1, dtype="object")
-    for np_contour in np_contoursP1:
-      w_valuesP1.append(np_contour[0][0][0])
+    w_valuesP1 = list(map(lambda i: i[0][0], contoursP1[0]))
     
     cut_lifebarP1 = lifebarP1[0 : lifebar_h, min(w_valuesP1) : lifebar_w]
     lifeP1_wP1 =  lifebar_w - min(w_valuesP1)
@@ -42,11 +38,7 @@ def MatchLifeP1(round_img):
     contoursP1 = cv.findContours(threshP1, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     contoursP1 = contoursP1[0] if len(contoursP1) == 2 else contoursP1[1]
     # cv.drawContours(lifebarP1, contoursP1, -1, (50, 0, 250),2)
-
-    w_valuesP1 = []
-    np_contoursP1 = np.array(contoursP1, dtype="object")
-    for np_contour in np_contoursP1:
-      w_valuesP1.append(np_contour[0][0][0])
+    w_valuesP1 = list(map(lambda i: i[0][0], contoursP1[0]))
 
     cut_lifebarP1 = lifebarP1[0 : lifebar_h, min(w_valuesP1) : lifebar_w]
     lifeP1_wP1 =  lifebar_w - min(w_valuesP1)
@@ -60,7 +52,7 @@ def MatchLifeP1(round_img):
   return lifeP1_percent
     
 def MatchLifeP2(round_img):
-  lifebarP2 = round_img[36 + 3 : 36 + lifebar_h - 3, 690 : 690 + lifebar_w]
+  lifebarP2 = round_img[36 : 36 + lifebar_h, 690 : 690 + lifebar_w]
   lifebarP2_hsv = cv.cvtColor(lifebarP2, cv.COLOR_BGR2HSV)
   maskP2_high_life = cv.inRange(lifebarP2_hsv, lower_bound_high_life, upper_bound_high_life)
   maskP2_low_life = cv.inRange(lifebarP2_hsv, lower_bound_low_life, upper_bound_low_life)
@@ -71,13 +63,7 @@ def MatchLifeP2(round_img):
     contoursP2 = cv.findContours(threshP2, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     contoursP2 = contoursP2[0] if len(contoursP2) == 2 else contoursP2[1]
     # cv.drawContours(lifebarP2, contoursP2, -1, (50, 0, 250),2)
-
-    w_valuesP2 = []
-    np_contoursP2 = np.array(contoursP2, dtype="object")
-    for np_contour in np_contoursP2:
-      w_valuesP2.append(np_contour[0][0][0])
-    w_valuesP2.append(np_contoursP2[-1][-1][-1][0])  
-    w_valuesP2.append(np_contoursP2[-1][-1][0][0])
+    w_valuesP2 = list(map(lambda i: i[0][0], contoursP2[0]))
 
     cut_lifebarP2 = lifebarP2[0 : lifebar_h, 0 : max(w_valuesP2)]
     lifeP2_wP2 =  max(w_valuesP2)
@@ -90,13 +76,8 @@ def MatchLifeP2(round_img):
     contoursP2 = cv.findContours(threshP2, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     contoursP2 = contoursP2[0] if len(contoursP2) == 2 else contoursP2[1]
     # cv.drawContours(lifebarP2, contoursP2, -1, (50, 0, 250),2)
+    w_valuesP2 = list(map(lambda i: i[0][0], contoursP2[0]))
 
-    w_valuesP2 = []
-    np_contoursP2 = np.array(contoursP2, dtype="object")
-    for np_contour in np_contoursP2:
-      w_valuesP2.append(np_contour[0][0][0])
-    w_valuesP2.append(np_contoursP2[-1][-1][-1][0])  
-    w_valuesP2.append(np_contoursP2[-1][-1][0][0])
     cut_lifebarP2 = lifebarP2[0 : lifebar_h, 0: max(w_valuesP2)]
     lifeP2_wP2 =  max(w_valuesP2)
     lifeP2_percent = (lifeP2_wP2 * 100)/lifebar_w

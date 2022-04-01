@@ -31,14 +31,16 @@ def track_char_txt(round_img, distanceH, distanceW):
         Pchar.append('3lisabeth')
       if txt == 'shunel':
         Pchar.append('shunei')
-      if txt == 'palf':
+      if txt == 'palf' or txt == 'raf':
         Pchar.append('ralf')
-      if txt == 'mal' or txt == 'wal':
+      if txt == 'mal' or txt == 'wal' or txt == 'wa':
         Pchar.append('mai')
       if txt == 'jor':
         Pchar.append('iori')
       if txt == 'chizurl':
         Pchar.append('chizuru')
+      if txt == 'weitenkun':
+        Pchar.append('meitenkun')
 
   if Pchar:
     cv.rectangle(round_img, (distanceW, distanceH + h), (distanceW + w, distanceH), (0,255,50), 1)
