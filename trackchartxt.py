@@ -24,21 +24,21 @@ def track_char_txt(round_img, distanceH, distanceW):
   for char in chars:
     for txt in txt_char:
       if txt == char[1]:
-        Pchar.append(char[1].capitalize())
+        Pchar.append(char[1])
       if txt == 'wong':
-        Pchar.append('Luong')
+        Pchar.append('luong')
       if txt == 'auisabeth':
-        Pchar.append('Elisabeth')
+        Pchar.append('3lisabeth')
       if txt == 'shunel':
-        Pchar.append('Shunei')
+        Pchar.append('shunei')
       if txt == 'palf':
-        Pchar.append('Ralf')
+        Pchar.append('ralf')
       if txt == 'mal' or txt == 'wal':
-        Pchar.append('Mai')
+        Pchar.append('mai')
       if txt == 'jor':
-        Pchar.append('Iori')
+        Pchar.append('iori')
       if txt == 'chizurl':
-        Pchar.append('Chizuru')
+        Pchar.append('chizuru')
 
   if Pchar:
     cv.rectangle(round_img, (distanceW, distanceH + h), (distanceW + w, distanceH), (0,255,50), 1)

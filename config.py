@@ -1,25 +1,27 @@
 import cv2 as cv
 import os.path
 
-round_img = cv.imread('match/id/game1/round2.png')
+match_path = 'img/match/'
 
-round1_img = cv.imread('match/id/game1/round1.png')
-round1ko_img = cv.imread('match/id/game1/round1ko.png')
-round2_img = cv.imread('match/id/game1/round2.png')
-round2ko_img = cv.imread('match/id/game1/round2ko.png')
-round3_img = cv.imread('match/id/game1/round3.png')
-round3ko_img = cv.imread('match/id/game1/round3ko.png')
-round4_img_exists = os.path.exists('match/id/game1/round4.png')
+round_img = cv.imread(f'{match_path}id/game1/round1.png')
+
+round1_img = cv.imread(f'{match_path}id/game1/round1.png')
+round1ko_img = cv.imread(f'{match_path}id/game1/round1ko.png')
+round2_img = cv.imread(f'{match_path}id/game1/round2.png')
+round2ko_img = cv.imread(f'{match_path}id/game1/round2ko.png')
+round3_img = cv.imread(f'{match_path}id/game1/round3.png')
+round3ko_img = cv.imread(f'{match_path}id/game1/round3ko.png')
+round4_img_exists = os.path.exists(f'{match_path}id/game1/round4.png')
 if round4_img_exists:
-  round4_img = cv.imread('match/id/game1/round4.png')
-  round4ko_img = cv.imread('match/id/game1/round4ko.png')
+  round4_img = cv.imread(f'{match_path}id/game1/round4.png')
+  round4ko_img = cv.imread(f'{match_path}id/game1/round4ko.png')
 else:
   round4_img = 0
   round4ko_img = 0
-round5_img_exists = os.path.exists('match/id/game1/round5.png')
+round5_img_exists = os.path.exists(f'{match_path}id/game1/round5.png')
 if round5_img_exists:
-  round5_img = cv.imread('match/id/game1/round5.png')
-  round5ko_img = cv.imread('match/id/game1/round5ko.png')
+  round5_img = cv.imread(f'{match_path}id/game1/round5.png')
+  round5ko_img = cv.imread(f'{match_path}id/game1/round5ko.png')
 else:
   round5_img = 0
   round5ko_img = 0
@@ -64,5 +66,6 @@ chars = [
   (38, 'kula'),
   (39, 'elisabeth'),
   (40, 'rock'),
+  (41, 'bjenet'),
   (42, 'gato'),
 ]
