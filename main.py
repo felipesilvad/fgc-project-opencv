@@ -1,5 +1,4 @@
 import cv2 as cv
-import math
 import trackchar
 import tracklife
 import trackchartxt
@@ -31,10 +30,10 @@ if __name__ == "__main__":
       cv.putText(config.round1_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
       cv.putText(config.round1_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-  round1_P1_start_life = math.ceil(tracklife.MatchLifeP1(config.round1_img))
-  round1_P2_start_life = math.ceil(tracklife.MatchLifeP2(config.round1_img))
-  round1_P1_end_life = math.ceil(tracklife.MatchLifeP1(config.round1ko_img))
-  round1_P2_end_life = math.ceil(tracklife.MatchLifeP2(config.round1ko_img))
+  round1_P1_start_life = tracklife.MatchLifeP1(config.round1_img)
+  round1_P2_start_life = tracklife.MatchLifeP2(config.round1_img)
+  round1_P1_end_life = tracklife.MatchLifeP1(config.round1ko_img)
+  round1_P2_end_life = tracklife.MatchLifeP2(config.round1ko_img)
 
   P1_char1_txt = list(dict.fromkeys(trackchartxt.track_char_txt(config.round1_img, 67, 21)))
   P2_char1_txt = list(dict.fromkeys(trackchartxt.track_char_txt(config.round1_img, 67, 1173)))
@@ -67,10 +66,10 @@ if __name__ == "__main__":
       cv.putText(config.round2_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
       cv.putText(config.round2_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-  round2_P1_start_life = math.ceil(tracklife.MatchLifeP1(config.round2_img))
-  round2_P2_start_life = math.ceil(tracklife.MatchLifeP2(config.round2_img))
-  round2_P1_end_life = math.ceil(tracklife.MatchLifeP1(config.round2ko_img))
-  round2_P2_end_life = math.ceil(tracklife.MatchLifeP2(config.round2ko_img))
+  round2_P1_start_life = tracklife.MatchLifeP1(config.round2_img)
+  round2_P2_start_life = tracklife.MatchLifeP2(config.round2_img)
+  round2_P1_end_life = tracklife.MatchLifeP1(config.round2ko_img)
+  round2_P2_end_life = tracklife.MatchLifeP2(config.round2ko_img)
   
   #ROUND 3
   P1_round3_current_char = trackchar.MatchP1(config.round3_img)
@@ -96,10 +95,10 @@ if __name__ == "__main__":
       cv.putText(config.round3_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
       cv.putText(config.round3_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-  round3_P1_start_life = math.ceil(tracklife.MatchLifeP1(config.round3_img))
-  round3_P2_start_life = math.ceil(tracklife.MatchLifeP2(config.round3_img))
-  round3_P1_end_life = math.ceil(tracklife.MatchLifeP1(config.round3ko_img))
-  round3_P2_end_life = math.ceil(tracklife.MatchLifeP2(config.round3ko_img))
+  round3_P1_start_life = tracklife.MatchLifeP1(config.round3_img)
+  round3_P2_start_life = tracklife.MatchLifeP2(config.round3_img)
+  round3_P1_end_life = tracklife.MatchLifeP1(config.round3ko_img)
+  round3_P2_end_life = tracklife.MatchLifeP2(config.round3ko_img)
 
   #ROUND 4
   if config.round4_img_exists:
@@ -126,10 +125,10 @@ if __name__ == "__main__":
         cv.putText(config.round4_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
         cv.putText(config.round4_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-    round4_P1_start_life = math.ceil(tracklife.MatchLifeP1(config.round4_img))
-    round4_P2_start_life = math.ceil(tracklife.MatchLifeP2(config.round4_img))
-    round4_P1_end_life = math.ceil(tracklife.MatchLifeP1(config.round4ko_img))
-    round4_P2_end_life = math.ceil(tracklife.MatchLifeP2(config.round4ko_img))
+    round4_P1_start_life = tracklife.MatchLifeP1(config.round4_img)
+    round4_P2_start_life = tracklife.MatchLifeP2(config.round4_img)
+    round4_P1_end_life = tracklife.MatchLifeP1(config.round4ko_img)
+    round4_P2_end_life = tracklife.MatchLifeP2(config.round4ko_img)
 
   #ROUND 5
   if config.round5_img_exists:
@@ -156,10 +155,10 @@ if __name__ == "__main__":
         cv.putText(config.round5_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(0, 0, 0),thickness=4)
         cv.putText(config.round5_img, char.upper(), org=(1171 + 3, trackchar.h - 3), fontFace=cv.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255),thickness=1)
 
-    round5_P1_start_life = math.ceil(tracklife.MatchLifeP1(config.round5_img))
-    round5_P2_start_life = math.ceil(tracklife.MatchLifeP2(config.round5_img))
-    round5_P1_end_life = math.ceil(tracklife.MatchLifeP1(config.round5ko_img))
-    round5_P2_end_life = math.ceil(tracklife.MatchLifeP2(config.round5ko_img))
+    round5_P1_start_life = tracklife.MatchLifeP1(config.round5_img)
+    round5_P2_start_life = tracklife.MatchLifeP2(config.round5_img)
+    round5_P1_end_life = tracklife.MatchLifeP1(config.round5ko_img)
+    round5_P2_end_life = tracklife.MatchLifeP2(config.round5ko_img)
 
 
   print(P1_char1_txt, P2_char1_txt)
