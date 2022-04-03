@@ -3,25 +3,25 @@ import os.path
 
 match_path = 'img/match/'
 
-round_img = cv.imread(f'{match_path}id/game3/round2ko.png')
+round_img = cv.imread(f'{match_path}id/game5/round2ko.png')
 
-round1_img = cv.imread(f'{match_path}id/game3/round1.png')
-round1ko_img = cv.imread(f'{match_path}id/game3/round1ko.png')
-round2_img = cv.imread(f'{match_path}id/game3/round2.png')
-round2ko_img = cv.imread(f'{match_path}id/game3/round2ko.png')
-round3_img = cv.imread(f'{match_path}id/game3/round3.png')
-round3ko_img = cv.imread(f'{match_path}id/game3/round3ko.png')
-round4_img_exists = os.path.exists(f'{match_path}id/game3/round4.png')
+round1_img = cv.imread(f'{match_path}id/game5/round1.png')
+round1ko_img = cv.imread(f'{match_path}id/game5/round1ko.png')
+round2_img = cv.imread(f'{match_path}id/game5/round2.png')
+round2ko_img = cv.imread(f'{match_path}id/game5/round2ko.png')
+round3_img = cv.imread(f'{match_path}id/game5/round3.png')
+round3ko_img = cv.imread(f'{match_path}id/game5/round3ko.png')
+round4_img_exists = os.path.exists(f'{match_path}id/game5/round4.png')
 if round4_img_exists:
-  round4_img = cv.imread(f'{match_path}id/game3/round4.png')
-  round4ko_img = cv.imread(f'{match_path}id/game3/round4ko.png')
+  round4_img = cv.imread(f'{match_path}id/game5/round4.png')
+  round4ko_img = cv.imread(f'{match_path}id/game5/round4ko.png')
 else:
   round4_img = 0
   round4ko_img = 0
-round5_img_exists = os.path.exists(f'{match_path}id/game3/round5.png')
+round5_img_exists = os.path.exists(f'{match_path}id/game5/round5.png')
 if round5_img_exists:
-  round5_img = cv.imread(f'{match_path}id/game3/round5.png')
-  round5ko_img = cv.imread(f'{match_path}id/game3/round5ko.png')
+  round5_img = cv.imread(f'{match_path}id/game5/round5.png')
+  round5ko_img = cv.imread(f'{match_path}id/game5/round5ko.png')
 else:
   round5_img = 0
   round5ko_img = 0

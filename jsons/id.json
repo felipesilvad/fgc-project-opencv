@@ -1,51 +1,51 @@
 {
     "id": {
-        "P1char1": "benimaru",
-        "P1char2": "luong",
-        "P1char3": "meitenkun",
-        "P2char1": "kukri",
-        "P2char2": "dinosaur",
-        "P2char3": "ralf",
+        "P1char1": "kukri",
+        "P1char2": "angel",
+        "P1char3": "dolores",
+        "P2char1": "king",
+        "P2char2": "dolores",
+        "P2char3": "yuri",
         "winner": "P1",
         "loser": "P2",
         "round1": {
-            "P1_current_char": "benimaru",
-            "P2_current_char": "kukri",
+            "P1_current_char": "kukri",
+            "P2_current_char": "king",
             "P1_start_life": 100,
-            "P1_end_life": 11,
+            "P1_end_life": 3,
             "P2_start_life": 100,
             "P2_end_life": 0
         },
         "round2": {
-            "P1_current_char": "benimaru",
-            "P2_current_char": "dinosaur",
-            "P1_start_life": 36,
-            "P1_end_life": 18,
+            "P1_current_char": "kukri",
+            "P2_current_char": "dolores",
+            "P1_start_life": 18,
+            "P1_end_life": 0,
+            "P2_start_life": 100,
+            "P2_end_life": 100
+        },
+        "round3": {
+            "P1_current_char": "angel",
+            "P2_current_char": "dolores",
+            "P1_start_life": 100,
+            "P1_end_life": 20,
             "P2_start_life": 100,
             "P2_end_life": 0
         },
-        "round3": {
-            "P1_current_char": "benimaru",
-            "P2_current_char": "ralf",
-            "P1_start_life": 48,
+        "round4": {
+            "P1_current_char": "angel",
+            "P2_current_char": "yuri",
+            "P1_start_life": 35,
             "P1_end_life": 0,
             "P2_start_life": 100,
-            "P2_end_life": 37
-        },
-        "round4": {
-            "P1_current_char": "luong",
-            "P2_current_char": "ralf",
-            "P1_start_life": 100,
-            "P1_end_life": 0,
-            "P2_start_life": 67,
-            "P2_end_life": "45"
+            "P2_end_life": 100
         },
         "round5": {
-            "P1_current_char": "meitenkun",
-            "P2_current_char": "ralf",
+            "P1_current_char": "dolores",
+            "P2_current_char": "yuri",
             "P1_start_life": 100,
-            "P1_end_life": 100,
-            "P2_start_life": 70,
+            "P1_end_life": 10,
+            "P2_start_life": 100,
             "P2_end_life": 0
         }
     }
