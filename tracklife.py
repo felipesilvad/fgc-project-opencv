@@ -12,8 +12,8 @@ upper_bound_high_life = np.array([high_life_color_hsv_2[0] + 30, high_life_color
 
 low_life_color_hsv_1 = [17, 244, 232]
 low_life_color_hsv_2 = [15, 255, 245]
-lower_bound_low_life = np.array([low_life_color_hsv_1[0] - 10, low_life_color_hsv_1[1] - 10, low_life_color_hsv_1[2] - 10])   
-upper_bound_low_life = np.array([low_life_color_hsv_2[0] + 10, low_life_color_hsv_2[1] + 10, low_life_color_hsv_2[2] + 10])  
+lower_bound_low_life = np.array([low_life_color_hsv_1[0] - 14, low_life_color_hsv_1[1] - 14, low_life_color_hsv_1[2] - 14])   
+upper_bound_low_life = np.array([low_life_color_hsv_2[0] + 14, low_life_color_hsv_2[1] + 14, low_life_color_hsv_2[2] + 14])  
 
 def MatchLifeP1(round_img):
   lifebarP1 = round_img[38 : 36 + lifebar_h, 110 : 110 + lifebar_w]
@@ -31,8 +31,10 @@ def MatchLifeP1(round_img):
     w_valuesP1 = []
     for w in list(map(lambda i: i[0][0][0], contoursP1)):
       w_valuesP1.append(w)
-    for w in list(map(lambda i: i[0][0], contoursP1[0])):
-      w_valuesP1.append(w)
+      
+    for wxs in contoursP1:
+      for w in list(map(lambda i: i[0][0], wxs)):
+        w_valuesP1.append(w)
     
     cut_lifebarP1 = lifebarP1[0 : lifebar_h, min(w_valuesP1) : lifebar_w]
     lifeP1_wP1 =  lifebar_w - min(w_valuesP1)
@@ -50,8 +52,10 @@ def MatchLifeP1(round_img):
     w_valuesP1 = []
     for w in list(map(lambda i: i[0][0][0], contoursP1)):
       w_valuesP1.append(w)
-    for w in list(map(lambda i: i[0][0], contoursP1[0])):
-      w_valuesP1.append(w)
+      
+    for wxs in contoursP1:
+      for w in list(map(lambda i: i[0][0], wxs)):
+        w_valuesP1.append(w)
 
     cut_lifebarP1 = lifebarP1[0 : lifebar_h, min(w_valuesP1) : lifebar_w]
     lifeP1_wP1 =  lifebar_w - min(w_valuesP1)
@@ -66,6 +70,11 @@ def MatchLifeP1(round_img):
     lifeP1_percent = 'error'
     cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
     cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
+    cv.imshow('Detected 2 lifes', lifebarP1)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+    lifeP1_percent = input('Correct life:')
+
   return lifeP1_percent
     
 def MatchLifeP2(round_img):
@@ -84,10 +93,10 @@ def MatchLifeP2(round_img):
     w_valuesP2 = []
     for w in list(map(lambda i: i[0][0][0], contoursP2)):
       w_valuesP2.append(w)
-    for w in list(map(lambda i: i[-1][0][0], contoursP2)):
-      w_valuesP2.append(w)
-    for w in list(map(lambda i: i[0][0], contoursP2[0])):
-      w_valuesP2.append(w)
+      
+    for wxs in contoursP2:
+      for w in list(map(lambda i: i[0][0], wxs)):
+        w_valuesP2.append(w)
 
     cut_lifebarP2 = lifebarP2[0 : lifebar_h, 0 : max(w_valuesP2)]
     lifeP2_wP2 =  max(w_valuesP2)
@@ -105,8 +114,10 @@ def MatchLifeP2(round_img):
     w_valuesP2 = []
     for w in list(map(lambda i: i[0][0][0], contoursP2)):
       w_valuesP2.append(w)
-    for w in list(map(lambda i: i[0][0], contoursP2[0])):
-      w_valuesP2.append(w)
+      
+    for wxs in contoursP2:
+      for w in list(map(lambda i: i[0][0], wxs)):
+        w_valuesP2.append(w)
 
     cut_lifebarP2 = lifebarP2[0 : lifebar_h, 0: max(w_valuesP2)]
     lifeP2_wP2 =  max(w_valuesP2)
@@ -121,5 +132,9 @@ def MatchLifeP2(round_img):
     lifeP2_percent = 'error'
     cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
     cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
+    cv.imshow('Detected 2 lifes', lifebarP2)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+    lifeP2_percent = input('Correct life:')
 
   return lifeP2_percent
