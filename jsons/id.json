@@ -1,0 +1,72 @@
+{
+    "id": [
+        {
+            "P1char1": "terry",
+            "P1char2": "bjenet",
+            "P1char3": "king",
+            "P2char1": "dinosaur",
+            "P2char2": "robert",
+            "P2char3": "athena",
+            "round1": {
+                "P1char": [
+                    "terry"
+                ],
+                "P2char": [
+                    "dinosaur"
+                ],
+                "P1_StartLife": 100,
+                "P1_EndLife": 0,
+                "P2_StartLife": 100,
+                "P2_EndLife": 43
+            },
+            "round2": {
+                "P1char": [
+                    "bjenet"
+                ],
+                "P2char": [
+                    "dinosaur"
+                ],
+                "P1_StartLife": 100,
+                "P1_EndLife": 0,
+                "P2_StartLife": 58,
+                "P2_EndLife": 12
+            },
+            "round3": {
+                "P1char": [
+                    "king"
+                ],
+                "P2char": [
+                    "dinosaur"
+                ],
+                "P1_StartLife": 100,
+                "P1_EndLife": 62,
+                "P2_StartLife": "37",
+                "P2_EndLife": 0
+            },
+            "round4": {
+                "P1char": [
+                    "king"
+                ],
+                "P2char": [
+                    "robert"
+                ],
+                "P1_StartLife": 92,
+                "P1_EndLife": 13,
+                "P2_StartLife": 100,
+                "P2_EndLife": 0
+            },
+            "round5": {
+                "P1char": [
+                    "king"
+                ],
+                "P2char": [
+                    "athena"
+                ],
+                "P1_StartLife": 28,
+                "P1_EndLife": 0,
+                "P2_StartLife": 100,
+                "P2_EndLife": 87
+            }
+        }
+    ]
+}

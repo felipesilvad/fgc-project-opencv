@@ -12,8 +12,8 @@ upper_bound_high_life = np.array([high_life_color_hsv_2[0] + 30, high_life_color
 
 low_life_color_hsv_1 = [17, 244, 232]
 low_life_color_hsv_2 = [15, 255, 245]
-lower_bound_low_life = np.array([low_life_color_hsv_1[0] - 14, low_life_color_hsv_1[1] - 14, low_life_color_hsv_1[2] - 14])   
-upper_bound_low_life = np.array([low_life_color_hsv_2[0] + 14, low_life_color_hsv_2[1] + 14, low_life_color_hsv_2[2] + 14])  
+lower_bound_low_life = np.array([low_life_color_hsv_1[0] - 20, low_life_color_hsv_1[1] - 20, low_life_color_hsv_1[2] - 20])   
+upper_bound_low_life = np.array([low_life_color_hsv_2[0] + 20, low_life_color_hsv_2[1] + 20, low_life_color_hsv_2[2] + 20])  
 
 def MatchLifeP1(round_img):
   lifebarP1 = round_img[38 : 36 + lifebar_h, 110 : 110 + lifebar_w]
