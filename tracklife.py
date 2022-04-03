@@ -68,8 +68,8 @@ def MatchLifeP1(round_img):
     lifeP1_percent = 0
   if np.sum(maskP1_high_life) > 0 and np.sum(maskP1_low_life) > 0:
     lifeP1_percent = 'error'
-    cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
-    cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
+    # cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
+    # cv.putText(lifebarP1, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
     cv.imshow('Detected 2 lifes', lifebarP1)
     cv.waitKey(0)
     cv.destroyAllWindows()
@@ -130,8 +130,8 @@ def MatchLifeP2(round_img):
     lifeP2_percent = 0
   if np.sum(maskP2_high_life) > 0 and np.sum(maskP2_low_life) > 0:
     lifeP2_percent = 'error'
-    cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
-    cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
+    # cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(0, 0, 255),thickness=4)
+    # cv.putText(lifebarP2, ('error'), org=(int(lifebar_w/2), 17), fontFace=cv.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 255, 255),thickness=2)
     cv.imshow('Detected 2 lifes', lifebarP2)
     cv.waitKey(0)
     cv.destroyAllWindows()

@@ -5,7 +5,7 @@ import trackchar
 import tracklife
 import trackchartxt
 import config
-
+from write_json import write_json, parse_data
 if __name__ == "__main__":
   sys.setrecursionlimit(10000)
 
@@ -124,6 +124,15 @@ if __name__ == "__main__":
   P2_char2 = check_char('P2', 2, P2_char2_txt, P2_chars_list, 91, 1173)
   P2_char3 = check_char('P2', 3, P2_char3_txt, P2_chars_list, 112, 1173)
 
+  winner, loser = 0, 0
+  if rounds[-1][3] == 0:
+    winner, loser = 'P2', 'P1'
+  else:
+    winner, loser = 'P1', 'P2'
+
+  data = parse_data(P1_char1,P1_char2,P1_char3,P2_char1,P2_char2,P2_char3,rounds,winner,loser)
+  write_json(data, 'jsons/id.json')
+  
   def round_results(round_n, rounds, round_img, roundko_img):
     print(f'ROUND {round_n}')
     print(rounds[round_n -1][0], 'VS', rounds[round_n -1][1])
