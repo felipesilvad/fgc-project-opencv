@@ -41,6 +41,8 @@ def track_char_txt(round_img, distanceH, distanceW):
         Pchar.append('chizuru')
       if txt == 'weitenkun':
         Pchar.append('meitenkun')
+      if txt == 'yure':
+        Pchar.append('yuri')
 
   if Pchar:
     cv.rectangle(round_img, (distanceW, distanceH + h), (distanceW + w, distanceH), (0,255,50), 1)

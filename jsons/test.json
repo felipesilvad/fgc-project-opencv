@@ -1,0 +1,130 @@
+{
+    "1649040825": {
+        "player1": "6GIjOGVZ3C7sSsmUgfro",
+        "player2": "6GIjOGVZ3C7sSsmUgfro",
+        "date": "01/02/2022",
+        "tournament_id": "CZMkZQD0JlukChMLShBD",
+        "type": "Pools",
+        "video_id": "1203981039",
+        "game1": {
+            "P1char1": "ramon",
+            "P1char2": "gato",
+            "P1char3": "k",
+            "P2char1": "bjenet",
+            "P2char2": "gato",
+            "P2char3": "rock",
+            "winner": "P1",
+            "loser": "P2",
+            "round1": {
+                "P1_current_char": "ramon",
+                "P2_current_char": "bjenet",
+                "P1_start_life": 100,
+                "P1_end_life": 30,
+                "P1_damage_taken": 70,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round2": {
+                "P1_current_char": "ramon",
+                "P2_current_char": "gato",
+                "P1_start_life": 45,
+                "P1_end_life": 0,
+                "P1_damage_taken": 45,
+                "P2_start_life": 100,
+                "P2_end_life": 97,
+                "P2_damage_taken": 3
+            },
+            "round3": {
+                "P1_current_char": "gato",
+                "P2_current_char": "gato",
+                "P1_start_life": 100,
+                "P1_end_life": 0,
+                "P1_damage_taken": 100,
+                "P2_start_life": 100,
+                "P2_end_life": 91,
+                "P2_damage_taken": 9
+            },
+            "round4": {
+                "P1_current_char": "k",
+                "P2_current_char": "gato",
+                "P1_start_life": 100,
+                "P1_end_life": 14,
+                "P1_damage_taken": 86,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round5": {
+                "P1_current_char": "k",
+                "P2_current_char": "rock",
+                "P1_start_life": 24,
+                "P1_end_life": 2,
+                "P1_damage_taken": 22,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            }
+        },
+        "game2": {
+            "P1char1": "ramon",
+            "P1char2": "gato",
+            "P1char3": "k",
+            "P2char1": "bjenet",
+            "P2char2": "gato",
+            "P2char3": "rock",
+            "winner": "P1",
+            "loser": "P2",
+            "round1": {
+                "P1_current_char": "ramon",
+                "P2_current_char": "bjenet",
+                "P1_start_life": 100,
+                "P1_end_life": 90,
+                "P1_damage_taken": 10,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round2": {
+                "P1_current_char": "ramon",
+                "P2_current_char": "gato",
+                "P1_start_life": 100,
+                "P1_end_life": 0,
+                "P1_damage_taken": 100,
+                "P2_start_life": 100,
+                "P2_end_life": 51,
+                "P2_damage_taken": 49
+            },
+            "round3": {
+                "P1_current_char": "gato",
+                "P2_current_char": "gato",
+                "P1_start_life": 100,
+                "P1_end_life": 77,
+                "P1_damage_taken": 23,
+                "P2_start_life": 76,
+                "P2_end_life": 0,
+                "P2_damage_taken": 76
+            },
+            "round4": {
+                "P1_current_char": "gato",
+                "P2_current_char": "rock",
+                "P1_start_life": 100,
+                "P1_end_life": 0,
+                "P1_damage_taken": 100,
+                "P2_start_life": 100,
+                "P2_end_life": 42,
+                "P2_damage_taken": 58
+            },
+            "round5": {
+                "P1_current_char": "k",
+                "P2_current_char": "rock",
+                "P1_start_life": 100,
+                "P1_end_life": 72,
+                "P1_damage_taken": 28,
+                "P2_start_life": 67,
+                "P2_end_life": 0,
+                "P2_damage_taken": 67
+            }
+        }
+    }
+}
