@@ -3,7 +3,9 @@ import os.path
 import os
 import sys
 
-id = '120938120983'
+video = 'video2.mp4'
+id = '555'
+game = 2
 player1 = '6GIjOGVZ3C7sSsmUgfro'
 player2 = '6GIjOGVZ3C7sSsmUgfro'
 date = '01/02/2022'
@@ -13,118 +15,119 @@ video_id = '1203981039'
 
 sys.setrecursionlimit(10000)
 id_path = f'img/match/{id}'
-games_count = len(next(os.walk(id_path))[1])
-round_img = cv.imread(f'{id_path}/game1/round2ko.png')
+if os.path.exists(f'{id_path}'):
+  games_count = len(next(os.walk(id_path))[1])
+  round_img = cv.imread(f'{id_path}/game1/round2ko.png')
 
-if games_count >= 1:
-  game1_round1_img = cv.imread(f'{id_path}/game1/round1.png')
-  game1_round1ko_img = cv.imread(f'{id_path}/game1/round1ko.png')
-  game1_round2_img = cv.imread(f'{id_path}/game1/round2.png')
-  game1_round2ko_img = cv.imread(f'{id_path}/game1/round2ko.png')
-  game1_round3_img = cv.imread(f'{id_path}/game1/round3.png')
-  game1_round3ko_img = cv.imread(f'{id_path}/game1/round3ko.png')
-  game1_round4_img_exists = os.path.exists(f'{id_path}/game1/round4.png')
-  if  game1_round4_img_exists:
-    game1_round4_img = cv.imread(f'{id_path}/game1/round4.png')
-    game1_round4ko_img = cv.imread(f'{id_path}/game1/round4ko.png')
-  else:
-    game1_round4_img = 0
-    game1_round4ko_img = 0
-  game1_round5_img_exists = os.path.exists(f'{id_path}/game1/round5.png')
-  if  game1_round5_img_exists:
-    game1_round5_img = cv.imread(f'{id_path}/game1/round5.png')
-    game1_round5ko_img = cv.imread(f'{id_path}/game1/round5ko.png')
-  else:
-    game1_round5_img = 0
-    game1_round5ko_img = 0
+  if games_count >= 1:
+    game1_round1_img = cv.imread(f'{id_path}/game1/round1.png')
+    game1_round1ko_img = cv.imread(f'{id_path}/game1/round1ko.png')
+    game1_round2_img = cv.imread(f'{id_path}/game1/round2.png')
+    game1_round2ko_img = cv.imread(f'{id_path}/game1/round2ko.png')
+    game1_round3_img = cv.imread(f'{id_path}/game1/round3.png')
+    game1_round3ko_img = cv.imread(f'{id_path}/game1/round3ko.png')
+    game1_round4_img_exists = os.path.exists(f'{id_path}/game1/round4.png')
+    if  game1_round4_img_exists:
+      game1_round4_img = cv.imread(f'{id_path}/game1/round4.png')
+      game1_round4ko_img = cv.imread(f'{id_path}/game1/round4ko.png')
+    else:
+      game1_round4_img = 0
+      game1_round4ko_img = 0
+    game1_round5_img_exists = os.path.exists(f'{id_path}/game1/round5.png')
+    if  game1_round5_img_exists:
+      game1_round5_img = cv.imread(f'{id_path}/game1/round5.png')
+      game1_round5ko_img = cv.imread(f'{id_path}/game1/round5ko.png')
+    else:
+      game1_round5_img = 0
+      game1_round5ko_img = 0
 
-if games_count >= 2:
-  game2_round1_img = cv.imread(f'{id_path}/game2/round1.png')
-  game2_round1ko_img = cv.imread(f'{id_path}/game2/round1ko.png')
-  game2_round2_img = cv.imread(f'{id_path}/game2/round2.png')
-  game2_round2ko_img = cv.imread(f'{id_path}/game2/round2ko.png')
-  game2_round3_img = cv.imread(f'{id_path}/game2/round3.png')
-  game2_round3ko_img = cv.imread(f'{id_path}/game2/round3ko.png')
-  game2_round4_img_exists = os.path.exists(f'{id_path}/game2/round4.png')
-  if  game2_round4_img_exists:
-    game2_round4_img = cv.imread(f'{id_path}/game2/round4.png')
-    game2_round4ko_img = cv.imread(f'{id_path}/game2/round4ko.png')
-  else:
-    game2_round4_img = 0
-    game2_round4ko_img = 0
-  game2_round5_img_exists = os.path.exists(f'{id_path}/game2/round5.png')
-  if  game2_round5_img_exists:
-    game2_round5_img = cv.imread(f'{id_path}/game2/round5.png')
-    game2_round5ko_img = cv.imread(f'{id_path}/game2/round5ko.png')
-  else:
-    game2_round5_img = 0
-    game2_round5ko_img = 0
+  if games_count >= 2:
+    game2_round1_img = cv.imread(f'{id_path}/game2/round1.png')
+    game2_round1ko_img = cv.imread(f'{id_path}/game2/round1ko.png')
+    game2_round2_img = cv.imread(f'{id_path}/game2/round2.png')
+    game2_round2ko_img = cv.imread(f'{id_path}/game2/round2ko.png')
+    game2_round3_img = cv.imread(f'{id_path}/game2/round3.png')
+    game2_round3ko_img = cv.imread(f'{id_path}/game2/round3ko.png')
+    game2_round4_img_exists = os.path.exists(f'{id_path}/game2/round4.png')
+    if  game2_round4_img_exists:
+      game2_round4_img = cv.imread(f'{id_path}/game2/round4.png')
+      game2_round4ko_img = cv.imread(f'{id_path}/game2/round4ko.png')
+    else:
+      game2_round4_img = 0
+      game2_round4ko_img = 0
+    game2_round5_img_exists = os.path.exists(f'{id_path}/game2/round5.png')
+    if  game2_round5_img_exists:
+      game2_round5_img = cv.imread(f'{id_path}/game2/round5.png')
+      game2_round5ko_img = cv.imread(f'{id_path}/game2/round5ko.png')
+    else:
+      game2_round5_img = 0
+      game2_round5ko_img = 0
 
-if games_count >= 3:
-  game3_round1_img = cv.imread(f'{id_path}/game3/round1.png')
-  game3_round1ko_img = cv.imread(f'{id_path}/game3/round1ko.png')
-  game3_round2_img = cv.imread(f'{id_path}/game3/round2.png')
-  game3_round2ko_img = cv.imread(f'{id_path}/game3/round2ko.png')
-  game3_round3_img = cv.imread(f'{id_path}/game3/round3.png')
-  game3_round3ko_img = cv.imread(f'{id_path}/game3/round3ko.png')
-  game3_round4_img_exists = os.path.exists(f'{id_path}/game3/round4.png')
-  if  game3_round4_img_exists:
-    game3_round4_img = cv.imread(f'{id_path}/game3/round4.png')
-    game3_round4ko_img = cv.imread(f'{id_path}/game3/round4ko.png')
-  else:
-    game3_round4_img = 0
-    game3_round4ko_img = 0
-  game3_round5_img_exists = os.path.exists(f'{id_path}/game3/round5.png')
-  if  game3_round5_img_exists:
-    game3_round5_img = cv.imread(f'{id_path}/game3/round5.png')
-    game3_round5ko_img = cv.imread(f'{id_path}/game3/round5ko.png')
-  else:
-    game3_round5_img = 0
-    game3_round5ko_img = 0
+  if games_count >= 3:
+    game3_round1_img = cv.imread(f'{id_path}/game3/round1.png')
+    game3_round1ko_img = cv.imread(f'{id_path}/game3/round1ko.png')
+    game3_round2_img = cv.imread(f'{id_path}/game3/round2.png')
+    game3_round2ko_img = cv.imread(f'{id_path}/game3/round2ko.png')
+    game3_round3_img = cv.imread(f'{id_path}/game3/round3.png')
+    game3_round3ko_img = cv.imread(f'{id_path}/game3/round3ko.png')
+    game3_round4_img_exists = os.path.exists(f'{id_path}/game3/round4.png')
+    if  game3_round4_img_exists:
+      game3_round4_img = cv.imread(f'{id_path}/game3/round4.png')
+      game3_round4ko_img = cv.imread(f'{id_path}/game3/round4ko.png')
+    else:
+      game3_round4_img = 0
+      game3_round4ko_img = 0
+    game3_round5_img_exists = os.path.exists(f'{id_path}/game3/round5.png')
+    if  game3_round5_img_exists:
+      game3_round5_img = cv.imread(f'{id_path}/game3/round5.png')
+      game3_round5ko_img = cv.imread(f'{id_path}/game3/round5ko.png')
+    else:
+      game3_round5_img = 0
+      game3_round5ko_img = 0
 
-if games_count >= 4:
-  game4_round1_img = cv.imread(f'{id_path}/game4/round1.png')
-  game4_round1ko_img = cv.imread(f'{id_path}/game4/round1ko.png')
-  game4_round2_img = cv.imread(f'{id_path}/game4/round2.png')
-  game4_round2ko_img = cv.imread(f'{id_path}/game4/round2ko.png')
-  game4_round3_img = cv.imread(f'{id_path}/game4/round3.png')
-  game4_round3ko_img = cv.imread(f'{id_path}/game4/round3ko.png')
-  game4_round4_img_exists = os.path.exists(f'{id_path}/game4/round4.png')
-  if  game4_round4_img_exists:
-    game4_round4_img = cv.imread(f'{id_path}/game4/round4.png')
-    game4_round4ko_img = cv.imread(f'{id_path}/game4/round4ko.png')
-  else:
-    game4_round4_img = 0
-    game4_round4ko_img = 0
-  game4_round5_img_exists = os.path.exists(f'{id_path}/game4/round5.png')
-  if  game4_round5_img_exists:
-    game4_round5_img = cv.imread(f'{id_path}/game4/round5.png')
-    game4_round5ko_img = cv.imread(f'{id_path}/game4/round5ko.png')
-  else:
-    game4_round5_img = 0
-    game4_round5ko_img = 0
+  if games_count >= 4:
+    game4_round1_img = cv.imread(f'{id_path}/game4/round1.png')
+    game4_round1ko_img = cv.imread(f'{id_path}/game4/round1ko.png')
+    game4_round2_img = cv.imread(f'{id_path}/game4/round2.png')
+    game4_round2ko_img = cv.imread(f'{id_path}/game4/round2ko.png')
+    game4_round3_img = cv.imread(f'{id_path}/game4/round3.png')
+    game4_round3ko_img = cv.imread(f'{id_path}/game4/round3ko.png')
+    game4_round4_img_exists = os.path.exists(f'{id_path}/game4/round4.png')
+    if  game4_round4_img_exists:
+      game4_round4_img = cv.imread(f'{id_path}/game4/round4.png')
+      game4_round4ko_img = cv.imread(f'{id_path}/game4/round4ko.png')
+    else:
+      game4_round4_img = 0
+      game4_round4ko_img = 0
+    game4_round5_img_exists = os.path.exists(f'{id_path}/game4/round5.png')
+    if  game4_round5_img_exists:
+      game4_round5_img = cv.imread(f'{id_path}/game4/round5.png')
+      game4_round5ko_img = cv.imread(f'{id_path}/game4/round5ko.png')
+    else:
+      game4_round5_img = 0
+      game4_round5ko_img = 0
 
-if games_count >= 4:
-  game5_round1_img = cv.imread(f'{id_path}/game5/round1.png')
-  game5_round1ko_img = cv.imread(f'{id_path}/game5/round1ko.png')
-  game5_round2_img = cv.imread(f'{id_path}/game5/round2.png')
-  game5_round2ko_img = cv.imread(f'{id_path}/game5/round2ko.png')
-  game5_round3_img = cv.imread(f'{id_path}/game5/round3.png')
-  game5_round3ko_img = cv.imread(f'{id_path}/game5/round3ko.png')
-  game5_round4_img_exists = os.path.exists(f'{id_path}/game5/round4.png')
-  if  game5_round4_img_exists:
-    game5_round4_img = cv.imread(f'{id_path}/game5/round4.png')
-    game5_round4ko_img = cv.imread(f'{id_path}/game5/round4ko.png')
-  else:
-    game5_round4_img = 0
-    game5_round4ko_img = 0
-  game5_round5_img_exists = os.path.exists(f'{id_path}/game5/round5.png')
-  if  game5_round5_img_exists:
-    game5_round5_img = cv.imread(f'{id_path}/game5/round5.png')
-    game5_round5ko_img = cv.imread(f'{id_path}/game5/round5ko.png')
-  else:
-    game5_round5_img = 0
-    game5_round5ko_img = 0
+  if games_count >= 4:
+    game5_round1_img = cv.imread(f'{id_path}/game5/round1.png')
+    game5_round1ko_img = cv.imread(f'{id_path}/game5/round1ko.png')
+    game5_round2_img = cv.imread(f'{id_path}/game5/round2.png')
+    game5_round2ko_img = cv.imread(f'{id_path}/game5/round2ko.png')
+    game5_round3_img = cv.imread(f'{id_path}/game5/round3.png')
+    game5_round3ko_img = cv.imread(f'{id_path}/game5/round3ko.png')
+    game5_round4_img_exists = os.path.exists(f'{id_path}/game5/round4.png')
+    if  game5_round4_img_exists:
+      game5_round4_img = cv.imread(f'{id_path}/game5/round4.png')
+      game5_round4ko_img = cv.imread(f'{id_path}/game5/round4ko.png')
+    else:
+      game5_round4_img = 0
+      game5_round4ko_img = 0
+    game5_round5_img_exists = os.path.exists(f'{id_path}/game5/round5.png')
+    if  game5_round5_img_exists:
+      game5_round5_img = cv.imread(f'{id_path}/game5/round5.png')
+      game5_round5ko_img = cv.imread(f'{id_path}/game5/round5ko.png')
+    else:
+      game5_round5_img = 0
+      game5_round5ko_img = 0
 
 chars = [
   (1, 'shunei'),
