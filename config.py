@@ -4,8 +4,8 @@ import os
 import sys
 
 video = 'video2.mp4'
-id = '555'
-game = 2
+id = '666'
+game = 3
 player1 = '6GIjOGVZ3C7sSsmUgfro'
 player2 = '6GIjOGVZ3C7sSsmUgfro'
 date = '01/02/2022'
@@ -15,6 +15,7 @@ video_id = '1203981039'
 
 sys.setrecursionlimit(10000)
 id_path = f'img/match/{id}'
+games_count = 0
 if os.path.exists(f'{id_path}'):
   games_count = len(next(os.walk(id_path))[1])
   round_img = cv.imread(f'{id_path}/game1/round2ko.png')
