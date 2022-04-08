@@ -39,6 +39,12 @@ if __name__ == "__main__":
       cv.waitKey(0)
       cv.destroyAllWindows()
       P1_current_char = input(f'P1_round{round_n}current_char: ')
+    if len(P1_current_char) == 0 and len(P1_char1_txt) == 0:
+      print('img:', P1_current_char, 'txt:', P1_char1_txt)
+      cv.imshow('round1', round_img[0 : 62, 0 : 109])
+      cv.waitKey(0)
+      cv.destroyAllWindows()
+      P1_current_char = input(f'P1_round{round_n}current_char: ')
     
     if len(P2_current_char) == 0 and len(P2_char1_txt) == 1:
       P2_current_char = P2_char1_txt
@@ -60,9 +66,30 @@ if __name__ == "__main__":
       cv.waitKey(0)
       cv.destroyAllWindows()
       P2_current_char = input(f'P2_round{round_n}current_char: ')
+    if len(P2_current_char) == 0 and len(P2_char1_txt) == 0:
+      print('img:', P2_current_char, 'txt:', P2_char1_txt)
+      cv.imshow('round1', round_img[0 : 62, 0 : 109])
+      cv.waitKey(0)
+      cv.destroyAllWindows()
+      P2_current_char = input(f'P2_round{round_n}current_char: ')
 
-    P1_chars_list.append(P1_current_char[0])
-    P2_chars_list.append(P2_current_char[0])
+    if P1_current_char[0]:
+      P1_chars_list.append(P1_current_char[0])
+    else:
+      print('img:', P1_current_char, 'txt:', P1_char1_txt)
+      cv.imshow('round1', round_img[0 : 62, 0 : 109])
+      cv.waitKey(0)
+      cv.destroyAllWindows()
+      P1_current_char = input(f'P1_round{round_n}current_char: ')
+
+    if P2_current_char[0]:
+      P2_chars_list.append(P1_current_char[0])
+    else:
+      print('img:', P2_current_char, 'txt:', P2_char1_txt)
+      cv.imshow('round1', round_img[0 : 62, 0 : 109])
+      cv.waitKey(0)
+      cv.destroyAllWindows()
+      P2_current_char = input(f'P2_round{round_n}current_char: ')
 
     if len(P1_current_char) == 1:
       cv.rectangle(round_img, (0, 0), (0 + trackchar.w, 0 + trackchar.h), (194, 255, 25), 2)
@@ -90,10 +117,10 @@ if __name__ == "__main__":
     P2_end_life = tracklife.MatchLifeP2(roundko_img)
 
     if P1_end_life != 0 and P2_end_life != 0:
-      cv.imshow('What Player should have 0 life: (p1 or p2)', roundko_img[0 : 67, 0 : 1280])
+      cv.imshow('What Player should have 0 life: Player [1] or [2]', roundko_img[0 : 67, 0 : 1280])
       cv.waitKey(0)
       cv.destroyAllWindows()
-      answer = input('What Player should have 0 life: (p1 or p2)')
+      answer = input('What Player should have 0 life: Player [1] or [2]')
       if answer == '1': P1_end_life = 0
       if answer == '2': P2_end_life = 0
 
@@ -219,4 +246,4 @@ if __name__ == "__main__":
   config.games_count, game1_data, game2_data, game3_data, game4_data, game5_data
   )
 
-  write_json(data, 'jsons/test.json')
+  write_json(data, f'jsons/{config.id}.json')

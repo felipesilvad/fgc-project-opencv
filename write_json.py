@@ -1,24 +1,28 @@
 import json
 
-def parse_round_data(P1char1, P1char2, P1char3, P2char1, P2char2, P2char3, rounds, winner, loser):
+def parse_round_data(P1char1, P1char2, P1char3, P2char1, P2char2, P2char3, rounds, winner, loser, 
+round1_time, round2_time, round3_time, round4_time, round5_time):
   if len(rounds) == 3:
     data = {
       "P1char1": P1char1, "P1char2": P1char2, "P1char3": P1char3, "P2char1": P2char1, "P2char2": P2char2, "P2char3": P2char3,
       "winner": winner, "loser": loser,
       "round1": {
+        'time': round1_time,
         'P1_current_char': rounds[0][0], 'P2_current_char': rounds[0][1],
-        'P1_start_life': rounds[0][2], 'P1_end_life': rounds[0][3], 'P1_damage_taken': rounds[0][2] - rounds[0][3],
-        'P2_start_life': rounds[0][4], 'P2_end_life': rounds[0][5], 'P2_damage_taken': rounds[0][4] - rounds[0][5],
+        'P1_start_life': rounds[0][2], 'P1_end_life': rounds[0][3], 'P1_damage_taken': int(rounds[0][2]) - int(rounds[0][3]),
+        'P2_start_life': rounds[0][4], 'P2_end_life': rounds[0][5], 'P2_damage_taken': int(rounds[0][4]) - int(rounds[0][5]),
       },
       "round2": {
+        'time': round2_time,
         'P1_current_char': rounds[1][0], 'P2_current_char': rounds[1][1],
-        'P1_start_life': rounds[1][2], 'P1_end_life': rounds[1][3], 'P1_damage_taken': rounds[1][2] - rounds[1][3],
-        'P2_start_life': rounds[1][4], 'P2_end_life': rounds[1][5], 'P2_damage_taken': rounds[1][4] - rounds[1][5],
+        'P1_start_life': rounds[1][2], 'P1_end_life': rounds[1][3], 'P1_damage_taken': int(rounds[1][2]) - int(rounds[1][3]),
+        'P2_start_life': rounds[1][4], 'P2_end_life': rounds[1][5], 'P2_damage_taken': int(rounds[1][4]) - int(rounds[1][5]),
       },
       "round3": {
+        'time': round3_time,
         'P1_current_char': rounds[2][0], 'P2_current_char': rounds[2][1],
-        'P1_start_life': rounds[2][2], 'P1_end_life': rounds[2][3], 'P1_damage_taken': rounds[2][2] - rounds[2][3],
-        'P2_start_life': rounds[2][4], 'P2_end_life': rounds[2][5], 'P2_damage_taken': rounds[2][4] - rounds[2][5],
+        'P1_start_life': rounds[2][2], 'P1_end_life': rounds[2][3], 'P1_damage_taken': int(rounds[2][2]) - int(rounds[2][3]),
+        'P2_start_life': rounds[2][4], 'P2_end_life': rounds[2][5], 'P2_damage_taken': int(rounds[2][4]) - int(rounds[2][5]),
       },
     }
   if len(rounds) == 4:
@@ -26,21 +30,25 @@ def parse_round_data(P1char1, P1char2, P1char3, P2char1, P2char2, P2char3, round
       "P1char1": P1char1, "P1char2": P1char2, "P1char3": P1char3, "P2char1": P2char1, "P2char2": P2char2, "P2char3": P2char3,
       "winner": winner, "loser": loser,
       "round1": {
+        'time': round1_time,
         'P1_current_char': rounds[0][0], 'P2_current_char': rounds[0][1],
         'P1_start_life': rounds[0][2], 'P1_end_life': rounds[0][3], 'P1_damage_taken': int(rounds[0][2]) - int(rounds[0][3]),
         'P2_start_life': rounds[0][4], 'P2_end_life': rounds[0][5], 'P2_damage_taken': int(rounds[0][4]) - int(rounds[0][5]),
       },
       "round2": {
+        'time': round2_time,
         'P1_current_char': rounds[1][0], 'P2_current_char': rounds[1][1],
         'P1_start_life': rounds[1][2], 'P1_end_life': rounds[1][3], 'P1_damage_taken': int(rounds[1][2]) - int(rounds[1][3]),
         'P2_start_life': rounds[1][4], 'P2_end_life': rounds[1][5], 'P2_damage_taken': int(rounds[1][4]) - int(rounds[1][5]),
       },
       "round3": {
+        'time': round3_time,
         'P1_current_char': rounds[2][0], 'P2_current_char': rounds[2][1],
         'P1_start_life': rounds[2][2], 'P1_end_life': rounds[2][3], 'P1_damage_taken': int(rounds[2][2]) - int(rounds[2][3]),
         'P2_start_life': rounds[2][4], 'P2_end_life': rounds[2][5], 'P2_damage_taken': int(rounds[2][4]) - int(rounds[2][5]),
       },
       "round4": {
+        'time': round4_time,
         'P1_current_char': rounds[3][0], 'P2_current_char': rounds[3][1],
         'P1_start_life': rounds[3][2], 'P1_end_life': rounds[3][3], 'P1_damage_taken': int(rounds[3][2]) - int(rounds[3][3]),
         'P2_start_life': rounds[3][4], 'P2_end_life': rounds[3][5], 'P2_damage_taken': int(rounds[3][4]) - int(rounds[3][5]),
@@ -51,29 +59,34 @@ def parse_round_data(P1char1, P1char2, P1char3, P2char1, P2char2, P2char3, round
       "P1char1": P1char1, "P1char2": P1char2, "P1char3": P1char3, "P2char1": P2char1, "P2char2": P2char2, "P2char3": P2char3,
       "winner": winner, "loser": loser,
       "round1": {
+        'time': round1_time,
         'P1_current_char': rounds[0][0], 'P2_current_char': rounds[0][1],
-        'P1_start_life': rounds[0][2], 'P1_end_life': rounds[0][3], 'P1_damage_taken': rounds[0][2] - rounds[0][3],
-        'P2_start_life': rounds[0][4], 'P2_end_life': rounds[0][5], 'P2_damage_taken': rounds[0][4] - rounds[0][5],
+        'P1_start_life': rounds[0][2], 'P1_end_life': rounds[0][3], 'P1_damage_taken': int(rounds[0][2]) - int(rounds[0][3]),
+        'P2_start_life': rounds[0][4], 'P2_end_life': rounds[0][5], 'P2_damage_taken': int(rounds[0][4]) - int(rounds[0][5]),
       },
       "round2": {
+        'time': round2_time,
         'P1_current_char': rounds[1][0], 'P2_current_char': rounds[1][1],
-        'P1_start_life': rounds[1][2], 'P1_end_life': rounds[1][3], 'P1_damage_taken': rounds[1][2] - rounds[1][3],
-        'P2_start_life': rounds[1][4], 'P2_end_life': rounds[1][5], 'P2_damage_taken': rounds[1][4] - rounds[1][5],
+        'P1_start_life': rounds[1][2], 'P1_end_life': rounds[1][3], 'P1_damage_taken': int(rounds[1][2]) - int(rounds[1][3]),
+        'P2_start_life': rounds[1][4], 'P2_end_life': rounds[1][5], 'P2_damage_taken': int(rounds[1][4]) - int(rounds[1][5]),
       },
       "round3": {
+        'time': round3_time,
         'P1_current_char': rounds[2][0], 'P2_current_char': rounds[2][1],
-        'P1_start_life': rounds[2][2], 'P1_end_life': rounds[2][3], 'P1_damage_taken': rounds[2][2] - rounds[2][3],
-        'P2_start_life': rounds[2][4], 'P2_end_life': rounds[2][5], 'P2_damage_taken': rounds[2][4] - rounds[2][5],
+        'P1_start_life': rounds[2][2], 'P1_end_life': rounds[2][3], 'P1_damage_taken': int(rounds[2][2]) - int(rounds[2][3]),
+        'P2_start_life': rounds[2][4], 'P2_end_life': rounds[2][5], 'P2_damage_taken': int(rounds[2][4]) - int(rounds[2][5]),
       },
       "round4": {
+        'time': round4_time,
         'P1_current_char': rounds[3][0], 'P2_current_char': rounds[3][1],
-        'P1_start_life': rounds[3][2], 'P1_end_life': rounds[3][3], 'P1_damage_taken': rounds[3][2] - rounds[3][3],
-        'P2_start_life': rounds[3][4], 'P2_end_life': rounds[3][5], 'P2_damage_taken': rounds[3][4] - rounds[3][5],
+        'P1_start_life': rounds[3][2], 'P1_end_life': rounds[3][3], 'P1_damage_taken': int(rounds[3][2]) - int(rounds[3][3]),
+        'P2_start_life': rounds[3][4], 'P2_end_life': rounds[3][5], 'P2_damage_taken': int(rounds[3][4]) - int(rounds[3][5]),
       },
       "round5": {
+        'time': round5_time,
         'P1_current_char': rounds[4][0], 'P2_current_char': rounds[4][1],
-        'P1_start_life': rounds[4][2], 'P1_end_life': rounds[4][3], 'P1_damage_taken': rounds[4][2] - rounds[4][3],
-        'P2_start_life': rounds[4][4], 'P2_end_life': rounds[4][5], 'P2_damage_taken': rounds[4][4] - rounds[4][5],
+        'P1_start_life': rounds[4][2], 'P1_end_life': rounds[4][3], 'P1_damage_taken': int(rounds[4][2]) - int(rounds[4][3]),
+        'P2_start_life': rounds[4][4], 'P2_end_life': rounds[4][5], 'P2_damage_taken': int(rounds[4][4]) - int(rounds[4][5]),
       },
     }
   return data

@@ -1,0 +1,90 @@
+{
+    "1649379514": {
+        "player1": "6GIjOGVZ3C7sSsmUgfro",
+        "player2": "6GIjOGVZ3C7sSsmUgfro",
+        "date": "01/02/2022",
+        "tournament_id": "CZMkZQD0JlukChMLShBD",
+        "type": "Pools",
+        "video_id": "1203981039",
+        "game1": {
+            "P1char1": "mai",
+            "P1char2": "bluemary",
+            "P1char3": "terry",
+            "P2char1": "king",
+            "P2char2": "ralf",
+            "P2char3": "terry",
+            "winner": "P1",
+            "loser": "P2",
+            "round1": {
+                "P1_current_char": "mai",
+                "P2_current_char": "king",
+                "P1_start_life": 100,
+                "P1_end_life": 90,
+                "P1_damage_taken": 10,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round2": {
+                "P1_current_char": "mai",
+                "P2_current_char": "ralf",
+                "P1_start_life": 100,
+                "P1_end_life": 89,
+                "P1_damage_taken": 11,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round3": {
+                "P1_current_char": "mai",
+                "P2_current_char": "terry",
+                "P1_start_life": 100,
+                "P1_end_life": 51,
+                "P1_damage_taken": 49,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            }
+        },
+        "game2": {
+            "P1char1": "mai",
+            "P1char2": "bluemary",
+            "P1char3": "terry",
+            "P2char1": "vanessa",
+            "P2char2": "k",
+            "P2char3": "terry",
+            "winner": "P1",
+            "loser": "P2",
+            "round1": {
+                "P1_current_char": "mai",
+                "P2_current_char": "vanessa",
+                "P1_start_life": 100,
+                "P1_end_life": 98,
+                "P1_damage_taken": 2,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round2": {
+                "P1_current_char": "mai",
+                "P2_current_char": "k",
+                "P1_start_life": 100,
+                "P1_end_life": 90,
+                "P1_damage_taken": 10,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            },
+            "round3": {
+                "P1_current_char": "mai",
+                "P2_current_char": "terry",
+                "P1_start_life": 100,
+                "P1_end_life": 96,
+                "P1_damage_taken": 4,
+                "P2_start_life": 100,
+                "P2_end_life": 0,
+                "P2_damage_taken": 100
+            }
+        }
+    }
+}
