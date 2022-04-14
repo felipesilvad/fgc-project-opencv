@@ -5,7 +5,7 @@ import sys
 import json
 
 video = 'video5.mp4'
-id = '2'
+id = 'test'
 game = 1
 player1 = '6GIjOGVZ3C7sSsmUgfro'
 player2 = '6GIjOGVZ3C7sSsmUgfro'

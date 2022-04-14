@@ -1,4 +1,10 @@
-import json
-import config
+import kivy
+from kivy.app import App
+from kivy.uix.label import Label
 
-print(config.game1_round1_time)
+class MyApp(App):
+  def build(self):
+    return Label(text="Work")
+
+if __name__ == '__main__':
+  MyApp().run()
